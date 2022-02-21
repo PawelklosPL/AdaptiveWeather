@@ -4,14 +4,14 @@ using System.Text;
 
 namespace securityComponent.UsersAccount
 {
-    class Account : LoginAccountData
+    public class UserAccount : LoginAccountData
     {
         public string Name { get; set; }
         public string Email { get; set; }
         public int MyProperty { get; set; }
     }
 
-    class LoginAccountData
+    public class LoginAccountData
     {
         public string Login { get; set; }
         public string Password { get; set; }
