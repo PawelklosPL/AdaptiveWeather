@@ -21,7 +21,7 @@ namespace adaptiveWeather.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [Route("LogIn")]
         public UserAccount LogIn()
         {
             return new UserAccount();

@@ -8,7 +8,6 @@ namespace securityComponent.UsersAccount
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public int MyProperty { get; set; }
     }
 
     public class LoginAccountData
