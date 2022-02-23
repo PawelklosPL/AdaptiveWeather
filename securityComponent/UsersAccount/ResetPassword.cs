@@ -6,5 +6,6 @@ namespace securityComponent.UsersAccount
 {
     interface IResetPassword
     {
+        void ResetPassword() { }
     }
 }

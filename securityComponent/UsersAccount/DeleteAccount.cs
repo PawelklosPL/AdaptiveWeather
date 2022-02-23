@@ -4,9 +4,8 @@ using System.Text;
 
 namespace securityComponent.UsersAccount
 {
-    interface ILogIn
+    interface IDeleteAccount
     {
-
-        void LogIn() { }
+        void DeleteAccount() { }
     }
 }

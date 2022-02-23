@@ -10,24 +10,24 @@ namespace adaptiveWeather.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserManager : ControllerBase
+    public class Weather : ControllerBase
     {
 
 
-        private readonly ILogger<UserManager> _logger;
+        private readonly ILogger<Weather> _logger;
 
-        public UserManager(ILogger<UserManager> logger)
+        public Weather(ILogger<Weather> logger)
         {
             _logger = logger;
         }
 
-        [Route("LogIn")]
+        [Route("GetUnLoginWeather")]
         public UserAccount LogIn()
         {
             throw new NotImplementedException();
         }
 
-        [Route("LogOff")]
+        [Route("GetLoginWeather")]
         public UserAccount LogOff()
         {
             throw new NotImplementedException();
