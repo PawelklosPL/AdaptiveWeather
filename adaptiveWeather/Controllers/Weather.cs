@@ -25,7 +25,7 @@ namespace adaptiveWeather.Controllers
         public UserAccount LogIn()
         {
             throw new NotImplementedException();
-        }
+        } 
 
         [Route("GetLoginWeather")]
         public UserAccount LogOff()
