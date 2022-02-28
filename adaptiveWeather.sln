@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adaptiveWeather", "adaptiveWeather\adaptiveWeather.csproj", "{7B161E40-8929-44D2-844A-6342CB4574AD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "securityComponent", "securityComponent\securityComponent.csproj", "{89EDB5BF-1216-4DA6-81C7-DD8E0F011FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaptiveWeather", "AdaptiveWeather\AdaptiveWeather.csproj", "{D79DF8D4-9671-4BFD-8906-902B9929B309}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B161E40-8929-44D2-844A-6342CB4574AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B161E40-8929-44D2-844A-6342CB4574AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B161E40-8929-44D2-844A-6342CB4574AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B161E40-8929-44D2-844A-6342CB4574AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89EDB5BF-1216-4DA6-81C7-DD8E0F011FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89EDB5BF-1216-4DA6-81C7-DD8E0F011FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89EDB5BF-1216-4DA6-81C7-DD8E0F011FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89EDB5BF-1216-4DA6-81C7-DD8E0F011FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D79DF8D4-9671-4BFD-8906-902B9929B309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D79DF8D4-9671-4BFD-8906-902B9929B309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D79DF8D4-9671-4BFD-8906-902B9929B309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D79DF8D4-9671-4BFD-8906-902B9929B309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {195D30BC-6822-4E78-B364-422B44721491}
+		SolutionGuid = {558305C2-32C7-4138-9D12-8E985315F6A0}
 	EndGlobalSection
 EndGlobal
