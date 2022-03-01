@@ -1,4 +1,4 @@
-﻿namespace JwtWebApiTutorial
+﻿namespace AdaptiveWeather
 {
     public class UserDto
     {

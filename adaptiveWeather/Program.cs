@@ -1,4 +1,4 @@
-global using JwtWebApiTutorial.Services.UserService;
+global using AdaptiveWeather.Services.UserService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
