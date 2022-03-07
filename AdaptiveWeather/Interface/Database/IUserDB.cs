@@ -2,10 +2,9 @@
 {
     public interface IUserDB
     {
-        public void GetUser() { }
-        void UpdateUser() { }
-        void AddUser() { }
-        void DeleteUser() { }
-        void EditUser() { }
+        public UserDto GetUser(string userLogin);
+        UserDto UpdateUser(UserDto user);
+        UserDto AddUser(UserDto user);
+        bool DeleteUser(string userId);
     }
 }
