@@ -10,7 +10,7 @@ namespace AdaptiveWeather.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController : ControllerBase 
     {
         public static User user = new User();
         private readonly IConfiguration _configuration;
