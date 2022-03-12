@@ -10,7 +10,17 @@ namespace Database
             throw new NotImplementedException();
         }
 
+        public void AddWeather()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool DeleteUser(string userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditWeather()
         {
             throw new NotImplementedException();
         }
@@ -20,7 +30,22 @@ namespace Database
             throw new NotImplementedException();
         }
 
+        public void GetWeather()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveWeather()
+        {
+            throw new NotImplementedException();
+        }
+
         public UserDto UpdateUser(UserDto user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateWeather()
         {
             throw new NotImplementedException();
         }
