@@ -27,11 +27,6 @@ namespace AdaptiveWeather.Controllers
         {
             var userName = _userService.GetMyName();
             return Ok(userName);
-
-            //var userName = User?.Identity?.Name;
-            //var userName2 = User.FindFirstValue(ClaimTypes.Name);
-            //var role = User.FindFirstValue(ClaimTypes.Role);
-            //return Ok(new { userName, userName2, role });
         }
 
         [HttpPost("register")]

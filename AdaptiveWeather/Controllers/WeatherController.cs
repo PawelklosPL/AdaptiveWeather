@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdaptiveWeather.Controllers
@@ -7,7 +8,7 @@ namespace AdaptiveWeather.Controllers
     [ApiController]
     public class WeatherController : ControllerBase
     {
-        [HttpPost("get")]
+        [HttpPost("get"), Authorize]
         public async Task<ActionResult<String>> GetWeather(String request)
         {
             return Ok("");
