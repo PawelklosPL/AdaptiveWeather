@@ -2,5 +2,9 @@
 {
     public class DatabaseService
     {
+        public string CreateUser()
+        {
+            return "";
+        }
     }
 }
