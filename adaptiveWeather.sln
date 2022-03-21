@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaptiveWeather", "Adaptive
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherReasoning", "WeatherReasoning\WeatherReasoning.csproj", "{A4F0B26D-02FC-420C-8732-D322A7DC2B97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{1174F803-4A95-4921-82B1-5A1882E6B706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{1174F803-4A95-4921-82B1-5A1882E6B706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseInterface", "DatabaseInterface\DatabaseInterface.csproj", "{1657D0EA-CCB7-4153-8F40-9EAD377DB0E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1174F803-4A95-4921-82B1-5A1882E6B706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1174F803-4A95-4921-82B1-5A1882E6B706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1174F803-4A95-4921-82B1-5A1882E6B706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1657D0EA-CCB7-4153-8F40-9EAD377DB0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1657D0EA-CCB7-4153-8F40-9EAD377DB0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1657D0EA-CCB7-4153-8F40-9EAD377DB0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1657D0EA-CCB7-4153-8F40-9EAD377DB0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,10 @@
-﻿namespace AdaptiveWeather.Interface.Database
+﻿using AdaptiveWeather;
+
+namespace DatabaseInterface
 {
     public interface IUserDB
     {
-        public UserDto GetUser(string userLogin);
+        public void GetUser(string userLogin);
         UserDto UpdateUser(UserDto user);
         UserDto AddUser(UserDto user);
         bool DeleteUser(string userId);

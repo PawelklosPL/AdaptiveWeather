@@ -1,13 +1,16 @@
 ﻿
 
+using AdaptiveWeather;
+using AdaptiveWeather.Interface;
+
 namespace Database
 {
-    public class DatabaseFacade
+    public class DatabaseFacade : IDatabase
     {
-        //public UserDto AddUser(UserDto user)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public UserDto AddUser(UserDto user)
+        {
+            throw new NotImplementedException();
+        }
 
         public void AddWeather()
         {
@@ -24,10 +27,10 @@ namespace Database
             throw new NotImplementedException();
         }
 
-        //public UserDto GetUser(string userLogin)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public void GetUser(string userLogin)
+        {
+            throw new NotImplementedException();
+        }
 
         public void GetWeather()
         {
@@ -39,10 +42,10 @@ namespace Database
             throw new NotImplementedException();
         }
 
-        //public UserDto UpdateUser(UserDto user)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public UserDto UpdateUser(UserDto user)
+        {
+            throw new NotImplementedException();
+        }
 
         public void UpdateWeather()
         {

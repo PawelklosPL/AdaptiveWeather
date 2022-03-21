@@ -1,4 +1,4 @@
-﻿using AdaptiveWeather.Interface.Database;
+﻿using DatabaseInterface;
 
 namespace AdaptiveWeather.Interface
 {

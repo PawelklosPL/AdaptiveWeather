@@ -1,4 +1,4 @@
-﻿namespace AdaptiveWeather.Interface.Database
+﻿namespace DatabaseInterface
 {
     public interface IWeatherDB
     {
