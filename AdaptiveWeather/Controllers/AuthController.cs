@@ -39,7 +39,7 @@ namespace AdaptiveWeather.Controllers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            ReflectionBase.RefGo();
+           new ReflectionBase(_configuration).RefGo();
 
             return Ok(user);
         }

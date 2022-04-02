@@ -2,11 +2,18 @@
 
 namespace AdaptiveWeather.Reflection
 {
-    public static class ReflectionBase
+    public class ReflectionBase
     {
+        private readonly IConfiguration _configuration;
         private static Assembly LoadAssembly(string assemblyPath)
         {
             return Assembly.LoadFrom(assemblyPath);
+        }
+
+
+        public ReflectionBase(IConfiguration configuration)
+        {
+            _configuration = configuration;
         }
 
         private static void DisplayAllType(Assembly assembly)
@@ -21,22 +28,7 @@ namespace AdaptiveWeather.Reflection
                 }
                 Console.WriteLine($"Type: {type.Name}");
                 Console.WriteLine("===================");
-                //Fileds
-                //foreach(var field in type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly))
-                //{
-                //    Console.WriteLine($"Filed: {field.Name}");
-                //}
-
-                
-
-                //Console.WriteLine($"Method: {method.Name}");
-                //if (method.Name == "AddUser")
-                //{
-                //    var userDTO = new UserDto();
-                //    userDTO.Username = "Name";
-                //    userDTO.Password = "Password";
-                //    method.Invoke(instance, new[] { userDTO });
-                //}
+            
 
                 foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
                 {
@@ -47,7 +39,7 @@ namespace AdaptiveWeather.Reflection
                         var userDTO = new UserDto();
                         userDTO.Username = "Name";
                         userDTO.Password = "Password";
-                        method.Invoke(instance, new[] { userDTO });
+                        var testo = method.Invoke(instance, new[] { userDTO });
                     }
                 }
                 Console.WriteLine("===================");
@@ -57,9 +49,10 @@ namespace AdaptiveWeather.Reflection
 
         }
 
-        public static void RefGo()
+        public void RefGo()
         {
-            Assembly assembly =  LoadAssembly(@"C:\Users\pawel\source\repos\AdaptiveWeather\Database\bin\Debug\net6.0\Database.dll");                              
+            var assemblyLocation = _configuration.GetSection("AppSettings:DatabaseAssemblyUrl").Value;
+            Assembly assembly =  LoadAssembly(assemblyLocation);                              
             DisplayAllType(assembly);
 
         }
