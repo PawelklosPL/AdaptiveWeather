@@ -2,7 +2,7 @@
 
 namespace AdaptiveWeather.Reflection
 {
-    public class ReflectionBase
+    public class ReflectionBaseHelper
     {
         private readonly IConfiguration _configuration;
         private static Assembly LoadAssembly(string assemblyPath)
@@ -11,7 +11,7 @@ namespace AdaptiveWeather.Reflection
         }
 
 
-        public ReflectionBase(IConfiguration configuration)
+        public ReflectionBaseHelper(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -54,7 +54,7 @@ namespace AdaptiveWeather.Reflection
             var assemblyLocation = _configuration.GetSection("AppSettings:DatabaseAssemblyUrl").Value;
             Assembly assembly =  LoadAssembly(assemblyLocation);                              
             DisplayAllType(assembly);
-
         }
+
     }
 }

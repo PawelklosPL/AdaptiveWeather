@@ -1,4 +1,5 @@
 ﻿using AdaptiveWeather.Reflection;
+using AdaptiveWeather.Services.DatabaseService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +17,13 @@ namespace AdaptiveWeather.Controllers
         public static User user = new User();
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
+        private readonly IDatabaseService _databaseService;
 
-        public AuthController(IConfiguration configuration, IUserService userService)
+        public AuthController(IConfiguration configuration, IUserService userService, IDatabaseService databaseService)
         {
             _configuration = configuration;
             _userService = userService;
+            _databaseService = databaseService;
         }
 
         [HttpGet, Authorize]
@@ -39,7 +42,7 @@ namespace AdaptiveWeather.Controllers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-           new ReflectionBase(_configuration).RefGo();
+            _databaseService.CreateUser();
 
             return Ok(user);
         }
