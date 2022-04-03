@@ -16,42 +16,52 @@ namespace AdaptiveWeather.Reflection
             _configuration = configuration;
         }
 
-        private static void DisplayAllType(Assembly assembly)
+        private void DisplayAllType(Assembly assembly)
         {
+            CallMethodFromAssembly(assembly, "AddUser");
 
-            
-            foreach(var type in assembly.GetTypes())
-            {
-                if(type.Name == "NullableAttribute")
-                {
-                    continue;
-                }
-                Console.WriteLine($"Type: {type.Name}");
-                Console.WriteLine("===================");
-            
 
-                foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
-                {
-                    Console.WriteLine($"Method: {method.Name}");
-                    if (method.Name == "AddUser")
-                    {
-                        var instance = Activator.CreateInstance(type);
-                        var userDTO = new UserDto();
-                        userDTO.Username = "Name";
-                        userDTO.Password = "Password";
-                        var testo = method.Invoke(instance, new[] { userDTO });
-                    }
-                }
-                Console.WriteLine("===================");
-            }
+
         }
 
         public void RefGo()
         {
-            var assemblyLocation = _configuration.GetSection("AppSettings:DatabaseAssemblyUrl").Value;
-            Assembly assembly =  LoadAssembly(assemblyLocation);                              
+            Assembly assembly = loadAssemblyByName();
             DisplayAllType(assembly);
         }
+
+        private void CallMethodFromAssembly(Assembly assembly, string methodName)
+        {
+            foreach (var type in assembly.GetTypes())
+            {
+                if (type.Name == "NullableAttribute")
+                {
+                    continue;
+                }
+                foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
+                {
+                    Console.WriteLine($"Method: {method.Name}");
+                    if (method.Name == methodName)
+                    {
+                        var instance = Activator.CreateInstance(type);
+                        var userDTO = new User();
+                        userDTO.Username = "Name";
+                        var testo = method.Invoke(instance, new[] { userDTO });
+                    }
+                }
+            }
+        }
+
+        private Assembly loadAssemblyByName()
+        {
+            var assemblyLocation = GetDataBaseAsemblyUrl();
+            return LoadAssembly(assemblyLocation);
+        }
+        private string GetDataBaseAsemblyUrl()
+        {
+            return _configuration.GetSection("AppSettings:DatabaseAssemblyUrl").Value;
+        }
+
 
     }
 }

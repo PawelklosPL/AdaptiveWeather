@@ -8,7 +8,7 @@ namespace Database
 {
     public class DatabaseFacade : IDatabase
     {
-        public UserDto AddUser(UserDto user)
+        public User AddUser(User user)
         {
             DatabaseBusinessLogic.AddUser();
             throw new NotImplementedException();
@@ -44,7 +44,7 @@ namespace Database
             throw new NotImplementedException();
         }
 
-        public UserDto UpdateUser(UserDto user)
+        public User UpdateUser(User user)
         {
             throw new NotImplementedException();
         }
