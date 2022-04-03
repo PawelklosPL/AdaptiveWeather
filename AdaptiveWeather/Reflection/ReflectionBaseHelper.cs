@@ -44,9 +44,6 @@ namespace AdaptiveWeather.Reflection
                 }
                 Console.WriteLine("===================");
             }
-
-
-
         }
 
         public void RefGo()

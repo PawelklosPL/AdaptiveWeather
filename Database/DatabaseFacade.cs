@@ -2,6 +2,7 @@
 
 using AdaptiveWeather;
 using AdaptiveWeather.Interface;
+using Database.BusinessLogic;
 
 namespace Database
 {
@@ -9,6 +10,7 @@ namespace Database
     {
         public UserDto AddUser(UserDto user)
         {
+            DatabaseBusinessLogic.AddUser();
             throw new NotImplementedException();
         }
 
