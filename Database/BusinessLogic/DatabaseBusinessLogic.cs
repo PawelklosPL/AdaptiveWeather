@@ -10,14 +10,14 @@ namespace Database.BusinessLogic
 {
     static class DatabaseBusinessLogic
     {
-        public static void AddUser()
+        public static void AddUser(AdaptiveWeather.User user)
         {
-            var user = new User();
-            user.Username = "Name";
-            user.PasswordSalt = "asdf";
-            user.PasswordHash = "12344";
+            var userDB = new User();
+            userDB.Username = user.Username;
+            userDB.PasswordSalt = "1234";
+            userDB.PasswordHash = "4321";
             var a = new W2WDBContext();
-            a.Users.Add(user);
+            a.Users.Add(userDB);
             a.SaveChanges();
         }
     }

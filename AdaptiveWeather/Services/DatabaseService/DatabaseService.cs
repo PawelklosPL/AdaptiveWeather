@@ -14,7 +14,12 @@ namespace AdaptiveWeather.Services.DatabaseService
         }
         public string CreateUser()
         {
-            reflectionBase.RefGo();
+
+            var userDTO = new AdaptiveWeather.User();
+            userDTO.Username = "NowePanie";
+            var pbjectTOAdd =   userDTO;
+
+            reflectionBase.RefGo("AppSettings:DatabaseAssemblyUrl", "AddUser", pbjectTOAdd);
             return "";
         }
     }

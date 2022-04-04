@@ -10,7 +10,7 @@ namespace Database
     {
         public User AddUser(User user)
         {
-            DatabaseBusinessLogic.AddUser();
+            DatabaseBusinessLogic.AddUser(user);
             throw new NotImplementedException();
         }
 

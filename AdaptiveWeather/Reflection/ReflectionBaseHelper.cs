@@ -16,21 +16,13 @@ namespace AdaptiveWeather.Reflection
             _configuration = configuration;
         }
 
-        private void DisplayAllType(Assembly assembly)
+        public void RefGo(string reflectionAssemblyName, string methodName, object paramiters)
         {
-            CallMethodFromAssembly(assembly, "AddUser");
-
-
-
+            Assembly assembly = loadAssemblyByName(reflectionAssemblyName);
+            CallMethodFromAssembly(assembly, methodName, paramiters);
         }
 
-        public void RefGo()
-        {
-            Assembly assembly = loadAssemblyByName();
-            DisplayAllType(assembly);
-        }
-
-        private void CallMethodFromAssembly(Assembly assembly, string methodName)
+        private void CallMethodFromAssembly(Assembly assembly, string methodName, object paramiters)
         {
             foreach (var type in assembly.GetTypes())
             {
@@ -44,24 +36,23 @@ namespace AdaptiveWeather.Reflection
                     if (method.Name == methodName)
                     {
                         var instance = Activator.CreateInstance(type);
-                        var userDTO = new User();
-                        userDTO.Username = "Name";
-                        var testo = method.Invoke(instance, new[] { userDTO });
+                        var a = paramiters as AdaptiveWeather.User;
+                        var testo = method.Invoke(instance, new[] { a });
                     }
                 }
             }
         }
 
-        private Assembly loadAssemblyByName()
+        private Assembly loadAssemblyByName(string reflectionAssemblyName)
         {
-            var assemblyLocation = GetDataBaseAsemblyUrl();
+            var assemblyLocation = GetDataBaseAsemblyUrl(reflectionAssemblyName);
             return LoadAssembly(assemblyLocation);
         }
-        private string GetDataBaseAsemblyUrl()
+        private string GetDataBaseAsemblyUrl(string reflectionAssemblyName)
         {
-            return _configuration.GetSection("AppSettings:DatabaseAssemblyUrl").Value;
+            return _configuration.GetSection(reflectionAssemblyName).Value;
         }
 
-
+        //"AppSettings:DatabaseAssemblyUrl"
     }
 }
