@@ -14,7 +14,7 @@ namespace AdaptiveWeather.Controllers
     [ApiController]
     public class AuthController : ControllerBase 
     {
-        public static User user = new User();
+        public static UserFromInterface user = new UserFromInterface();
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
         private readonly IDatabaseService _databaseService;
@@ -34,7 +34,7 @@ namespace AdaptiveWeather.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDto request)
+        public async Task<ActionResult<UserDto>> Register(UserDto request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
@@ -64,7 +64,7 @@ namespace AdaptiveWeather.Controllers
             return Ok(token);
         }
 
-        private string CreateToken(User user)
+        private string CreateToken(UserFromInterface user)
         {
             List<Claim> claims = new List<Claim>
             {

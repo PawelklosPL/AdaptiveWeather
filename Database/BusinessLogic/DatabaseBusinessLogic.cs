@@ -10,7 +10,7 @@ namespace Database.BusinessLogic
 {
     static class DatabaseBusinessLogic
     {
-        public static void AddUser(AdaptiveWeather.User user)
+        public static void AddUser(AdaptiveWeather.UserFromInterface user)
         {
             var userDB = new User();
             userDB.Username = user.Username;

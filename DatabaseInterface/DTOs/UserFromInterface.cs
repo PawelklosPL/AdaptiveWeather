@@ -1,6 +1,6 @@
 ﻿namespace AdaptiveWeather
 {
-    public class User
+    public class UserFromInterface
     {
         public string Username { get; set; } = string.Empty;
         public byte[] PasswordHash { get; set; }

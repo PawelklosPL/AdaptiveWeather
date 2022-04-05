@@ -36,7 +36,7 @@ namespace AdaptiveWeather.Reflection
                     if (method.Name == methodName)
                     {
                         var instance = Activator.CreateInstance(type);
-                        var a = paramiters as AdaptiveWeather.User;
+                        var a = paramiters as AdaptiveWeather.UserFromInterface;
                         var testo = method.Invoke(instance, new[] { a });
                     }
                 }

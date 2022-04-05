@@ -15,7 +15,7 @@ namespace AdaptiveWeather.Services.DatabaseService
         public string CreateUser()
         {
 
-            var userDTO = new AdaptiveWeather.User();
+            var userDTO = new AdaptiveWeather.UserFromInterface();
             userDTO.Username = "NowePanie";
             var pbjectTOAdd =   userDTO;
 
